@@ -16,6 +16,11 @@ curtainPanel.onclick = function() {
     if (curtainDown == true) {
         curtainDown = false;
     } else {
+        if (checkIfAllCardsClosed(cardActivityArray)===false) {
+            cardArray[getActiveCardIndex(cardActivityArray)].classList.toggle('active');
+            updateCardActivityArray(getActiveCardIndex(cardActivityArray));
+            cardActivityArray = [educationActive, workActive, skillsActive, hobbiesActive, gamesActive];
+        }
         curtainDown = true;
     }
     console.log(curtainDown);
@@ -55,6 +60,20 @@ function getActiveCardIndex(inputArray) {
     return activeCardIndex
 }
 
+function updateCardActivityArray(index) {
+    if (index === 0) {
+        educationActive = false;
+    } else if (index === 1) {
+        workActive = false;
+    } else if (index === 2) {
+        skillsActive = false;
+    } else if (index === 3) {
+        hobbiesActive = false;
+    } else if (index === 4) {
+        gamesActive = false;
+    }
+}
+
 
 //---------------------------------//
 //----Education Card Controller----//
@@ -68,6 +87,7 @@ educationIcon.onclick = function() {
     }
     if (checkIfAllCardsClosed(cardActivityArray)===false) {
         cardArray[getActiveCardIndex(cardActivityArray)].classList.toggle('active');
+        updateCardActivityArray(getActiveCardIndex(cardActivityArray));
     }
     educationActive = true;
     cardActivityArray = [educationActive, workActive, skillsActive, hobbiesActive, gamesActive];
@@ -86,6 +106,7 @@ workIcon.onclick = function() {
     }
     if (checkIfAllCardsClosed(cardActivityArray)===false) {
         cardArray[getActiveCardIndex(cardActivityArray)].classList.toggle('active');
+        updateCardActivityArray(getActiveCardIndex(cardActivityArray));
     }
     workActive = true;
     cardActivityArray = [educationActive, workActive, skillsActive, hobbiesActive, gamesActive];
@@ -104,6 +125,7 @@ skillsIcon.onclick = function() {
     }
     if (checkIfAllCardsClosed(cardActivityArray)===false) {
         cardArray[getActiveCardIndex(cardActivityArray)].classList.toggle('active');
+        updateCardActivityArray(getActiveCardIndex(cardActivityArray));
     }
     skillsActive = true;
     cardActivityArray = [educationActive, workActive, skillsActive, hobbiesActive, gamesActive];
@@ -122,6 +144,7 @@ hobbiesIcon.onclick = function() {
     }
     if (checkIfAllCardsClosed(cardActivityArray)===false) {
         cardArray[getActiveCardIndex(cardActivityArray)].classList.toggle('active');
+        updateCardActivityArray(getActiveCardIndex(cardActivityArray));
     }
     hobbiesActive = true;
     cardActivityArray = [educationActive, workActive, skillsActive, hobbiesActive, gamesActive];
@@ -140,6 +163,7 @@ gamesIcon.onclick = function() {
     }
     if (checkIfAllCardsClosed(cardActivityArray)===false) {
         cardArray[getActiveCardIndex(cardActivityArray)].classList.toggle('active');
+        updateCardActivityArray(getActiveCardIndex(cardActivityArray));
     }
     gamesActive = true;
     cardActivityArray = [educationActive, workActive, skillsActive, hobbiesActive, gamesActive];
