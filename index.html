@@ -17,13 +17,35 @@
         <div class="icon" id="games-icon"></div>
     </div>
     <div class="main-page">
-        <div class="top-curtain"></div>
+        <div class="top-curtain">
+
+            <img id="profile-pic" src="images/profile_pic.jpg" alt="">
+            <svg height="100%" width="100%">
+                <defs>
+                    <mask id="mask" x="0" y="0" height="100%" width="100%">
+                        <rect x="0" y="0" height="100%" width="100%" />
+                        <ellipse cx="75%" cy="50%" rx="50" ry="75" />
+                    </mask>
+                </defs>
+                <rect x="0" y="0" height="100%" width="100%" />
+            </svg>
+
+        </div>
+
         <div class="curtain-panel" id="curtain-panel"></div>
         <div class="bottom-curtain"></div>
     </div>
     
     <div class="one-card" id="education-card">
         <div class="card-header"><h2>Education</h2></div>
+        <div class="image-header">
+            <img src="images/UCSB_logo.png" alt="" style="height: 72px; width: auto;">
+            <p class="inline">2019-2023</p>
+        </div>
+        <p class="text-paragraph">I recieved my Bachelor of Science degree in the field of
+            Psychological and Brain Sciences.
+        </p>
+        
     </div>
     <div class="one-card" id="work-card">
         <div class="card-header"><h2>Work Experience</h2></div>
